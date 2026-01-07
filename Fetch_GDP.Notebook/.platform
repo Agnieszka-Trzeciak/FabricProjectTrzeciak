@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Fetch_GDP"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d1caa758-8d59-9c8b-4c9d-79049b691401"
+  }
+}

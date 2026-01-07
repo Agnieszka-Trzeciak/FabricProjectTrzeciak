@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Fetch_Taxi_Lookup"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4289d088-56a6-be4f-4a37-b11ce143789f"
+  }
+}

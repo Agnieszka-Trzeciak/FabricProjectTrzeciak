@@ -1,0 +1,98 @@
+table tlc_rides_gold
+	lineageTag: b70aeea8-f64f-45c5-8011-5b99c51fab8e
+	sourceLineageTag: [dbo].[tlc_rides_gold]
+
+	measure Average_Fare = DIVIDE(SUM(tlc_rides_gold[Total_Revenue]),SUM(tlc_rides_gold[Number_of_Trips]))
+		lineageTag: 5e120848-c227-4ea5-829e-5e19cfd7c3ca
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Total_Revenue_Euro = SUMX(tlc_rides_gold,tlc_rides_gold[Total_Revenue]/RELATED(exchange_rates[OBS_VALUE]))
+		lineageTag: 1ec70c83-c1b6-499c-8f6e-42f66df42728
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pickup_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 58bfdffe-39e3-4544-a5d1-98173363fe1b
+		sourceLineageTag: pickup_date
+		summarizeBy: none
+		sourceColumn: pickup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Revenue
+		dataType: double
+		lineageTag: b405ca32-2a36-41c4-bdc5-2adbdc1f9bb6
+		sourceLineageTag: Total_Revenue
+		summarizeBy: sum
+		sourceColumn: Total_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Number_of_Trips
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b71e999-e49e-4ec5-a86b-86a262a8b41b
+		sourceLineageTag: Number_of_Trips
+		summarizeBy: sum
+		sourceColumn: Number_of_Trips
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: e80b96a3-f586-4574-9d66-c6263be50b55
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Borough
+		dataType: string
+		lineageTag: 2cfbba33-3791-4e5d-9ac2-d3cefab0e21e
+		sourceLineageTag: Borough
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: Borough
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Average_Fare 2'
+		dataType: double
+		lineageTag: 0e40de6b-679d-4918-a431-d42ff5436dc3
+		sourceLineageTag: Average_Fare
+		summarizeBy: sum
+		sourceColumn: Average_Fare
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ID
+		dataType: string
+		lineageTag: 728a051d-386b-4007-aebb-8c9c7fc78655
+		sourceLineageTag: ID
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tlc_rides_gold = entity
+		mode: directLake
+		source
+			entityName: tlc_rides_gold
+			schemaName: dbo
+			expressionSource: 'DirectLake - Main'
+

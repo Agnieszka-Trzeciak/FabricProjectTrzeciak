@@ -1,0 +1,326 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "d85ca2d2-5080-9a4e-4c2a-01b6c89f9aee",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "color": {
+              "value": "yellow",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze TLC Yellow",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "28f0e43a-a018-a79b-47df-b7bec9eb5822",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold TLC",
+        "dependsOn": [
+          {
+            "activity": "Silver TLC Yellow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Silver TLC Green",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "d85ca2d2-5080-9a4e-4c2a-01b6c89f9aee",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "color": {
+              "value": "green",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze TLC Green",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "dc162d39-d634-a4a9-407f-e9d369a15a05",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "color": {
+              "value": "yellow",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver TLC Yellow",
+        "dependsOn": [
+          {
+            "activity": "Bronze TLC Yellow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "dc162d39-d634-a4a9-407f-e9d369a15a05",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "color": {
+              "value": "green",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver TLC Green",
+        "dependsOn": [
+          {
+            "activity": "Bronze TLC Green",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "ecc056af-af34-ac4c-45f0-84d5c7da09ea",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze OpenAQ",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "e3206576-3fa5-bc71-40b9-507e0b35474a",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold OpenAQ",
+        "dependsOn": [
+          {
+            "activity": "Silver OpenAQ",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "e76da4ba-09ad-a0b3-486e-3a092e7aa4ec",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "Year": {
+              "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[0]",
+              "type": "string"
+            },
+            "Month": {
+              "value": {
+                "value": "@split(startOfMonth(addDays(utcNow(),-15)),'-')[1]",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver OpenAQ",
+        "dependsOn": [
+          {
+            "activity": "Bronze OpenAQ",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "e61b8e62-7537-8211-43af-e6eff88f2d25",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Exchange rates Fetching",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "d1caa758-8d59-9c8b-4c9d-79049b691401",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "GDP Fetching",
+        "dependsOn": []
+      }
+    ]
+  }
+}

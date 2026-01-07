@@ -1,0 +1,180 @@
+{
+  "config": "{\"version\":\"5.69\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU12\",\"type\":2,\"version\":{\"visual\":\"2.5.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU12",
+            "path": "BaseThemes/CY25SU12.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Pollution",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"e713a9e3c936c93d1600\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"air_quality_gold\"}},\"Property\":\"Parameter_Name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'o3'\"}}],[{\"Literal\":{\"Value\":\"'pm25'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "0d7fa0f6b57f5ebbc68e",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"298cfbb97a727ebead63\",\"layouts\":[{\"id\":0,\"position\":{\"x\":715.7894577162568,\"y\":0,\"z\":4005,\"width\":564.4736716181511,\"height\":314.4736771951937,\"tabOrder\":4005}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tlc_rides_gold.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Avg(air_quality_gold.Average)\"}],\"Series\":[{\"queryRef\":\"tlc_rides_gold.Borough\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Year\"},\"Name\":\"tlc_rides_gold.Year\",\"NativeReferenceName\":\"Year\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Average\"}},\"Function\":1},\"Name\":\"Avg(air_quality_gold.Average)\",\"NativeReferenceName\":\"Average of Average\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Borough\"},\"Name\":\"tlc_rides_gold.Borough\",\"NativeReferenceName\":\"Borough\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Average\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Average value'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average observed value by year'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 314.47,
+          "width": 564.47,
+          "x": 715.79,
+          "y": 0.00,
+          "z": 4005.00
+        },
+        {
+          "config": "{\"name\":\"2e39be8e789929c5027d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":439.4736744066724,\"y\":0,\"z\":4004,\"width\":278.94736219824716,\"height\":99.99999776918294,\"tabOrder\":4004}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(air_quality_gold.Average)\"},{\"queryRef\":\"Min(air_quality_gold.Parameter_Units)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Average\"}},\"Function\":1},\"Name\":\"Sum(air_quality_gold.Average)\",\"NativeReferenceName\":\"Average of Average\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Units\"}},\"Function\":3},\"Name\":\"Min(air_quality_gold.Parameter_Units)\",\"NativeReferenceName\":\"First Parameter_Units\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Average\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}},\"selector\":{\"id\":\"default\"}}],\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"matchValueAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"textWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average value'\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 278.95,
+          "x": 439.47,
+          "y": 0.00,
+          "z": 4004.00
+        },
+        {
+          "config": "{\"name\":\"306835d6217c099031b2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":436.84209551800967,\"y\":321.0526244168505,\"z\":4006,\"width\":843.4210338163982,\"height\":398.6842016324004,\"tabOrder\":4006}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tlc_rides_gold.pickup_date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(tlc_rides_gold.Number_of_Trips)\"}],\"Y2\":[{\"queryRef\":\"Avg(air_quality_gold.Average)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"pickup_date\"},\"Name\":\"tlc_rides_gold.pickup_date\",\"NativeReferenceName\":\"pickup_date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Number_of_Trips\"}},\"Function\":0},\"Name\":\"Sum(tlc_rides_gold.Number_of_Trips)\",\"NativeReferenceName\":\"Sum of Number_of_Trips\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Average\"}},\"Function\":1},\"Name\":\"Avg(air_quality_gold.Average)\",\"NativeReferenceName\":\"Average of Average\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"pickup_date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Date'\"}}}}}],\"valueAxis\":[{\"properties\":{\"secTitleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Average value'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average observed value contextualized by number of trips'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 398.68,
+          "width": 843.42,
+          "x": 436.84,
+          "y": 321.05,
+          "z": 4006.00
+        },
+        {
+          "config": "{\"name\":\"4c7c6e343b87c22397de\",\"layouts\":[{\"id\":0,\"position\":{\"x\":439.4736744066724,\"y\":99.99999776918294,\"z\":4008,\"width\":281.5789410869099,\"height\":99.99999776918294,\"tabOrder\":4008}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(air_quality_gold.Maximum)\"},{\"queryRef\":\"Min(air_quality_gold.Parameter_Units)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Units\"}},\"Function\":3},\"Name\":\"Min(air_quality_gold.Parameter_Units)\",\"NativeReferenceName\":\"First Parameter_Units\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Maximum\"}},\"Function\":4},\"Name\":\"Sum(air_quality_gold.Maximum)\",\"NativeReferenceName\":\"Max of Maximum\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Maximum\"}},\"Function\":4}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}},\"selector\":{\"id\":\"default\"}}],\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"matchValueAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"textWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Highest value'\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 281.58,
+          "x": 439.47,
+          "y": 100.00,
+          "z": 4008.00
+        },
+        {
+          "config": "{\"name\":\"5b47550207e1e715fd60\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":436.84209551800967,\"height\":122.36841832281597,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"tlc_rides_gold.pickup_date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"pickup_date\"},\"Name\":\"tlc_rides_gold.pickup_date\",\"NativeReferenceName\":\"pickup_date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"pickup_date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2022-01-01T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2024-12-01T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"pickup_date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2022-01-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"pickup_date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2024-12-02T00:00:00'\"}}}}}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Time Period'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 122.37,
+          "width": 436.84,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5eeda4751e01e92b6255\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":297.3684144188861,\"z\":4000,\"width\":436.84209551800967,\"height\":422.3684116303648,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"azureMap\",\"projections\":{\"Y\":[{\"queryRef\":\"Avg(borough_lookup.Latitude)\"}],\"X\":[{\"queryRef\":\"Avg(borough_lookup.Longitude)\"}],\"Category\":[{\"queryRef\":\"air_quality_gold.Full_Borough_Name\",\"active\":true}],\"Series\":[{\"queryRef\":\"air_quality_gold.Borough\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"borough_lookup\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Latitude\"}},\"Function\":1},\"Name\":\"Avg(borough_lookup.Latitude)\",\"NativeReferenceName\":\"Average of Latitude\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Longitude\"}},\"Function\":1},\"Name\":\"Avg(borough_lookup.Longitude)\",\"NativeReferenceName\":\"Average of Longitude\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Full_Borough_Name\"},\"Name\":\"air_quality_gold.Full_Borough_Name\",\"NativeReferenceName\":\"Full_Borough_Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Borough\"},\"Name\":\"air_quality_gold.Borough\",\"NativeReferenceName\":\"Borough\"}]},\"queryOptions\":{\"keepProjectionOrder\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"mapControls\":[{\"properties\":{\"centerLatitude\":{\"expr\":{\"Literal\":{\"Value\":\"40.70440698855327D\"}}},\"centerLongitude\":{\"expr\":{\"Literal\":{\"Value\":\"-73.87376D\"}}},\"defaultStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'road'\"}}},\"showStylePicker\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showNavigationControls\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showSelectionControl\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"zoom\":{\"expr\":{\"Literal\":{\"Value\":\"8.66D\"}}},\"showRoadDetails\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showBuildingFootprints\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showAdminDistrict2Borders\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAdminDistrictBorders\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showCountryRegionBorders\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"bubbleLayer\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"bubbleRadius\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}},\"minBubbleRadius\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}},\"maxRadius\":{\"expr\":{\"Literal\":{\"Value\":\"21L\"}}},\"bubbleStrokeWidth\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}},\"autoStrokeColor\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"layerPosition\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}],\"filledMap\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"mapTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"40L\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'New York Boroughs'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 422.37,
+          "width": 436.84,
+          "x": 0.00,
+          "y": 297.37,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"6c9b90d1610904dce184\",\"layouts\":[{\"id\":0,\"position\":{\"x\":436.84209551800967,\"y\":199.99999553836588,\"z\":4007,\"width\":278.94736219824716,\"height\":99.99999776918294,\"tabOrder\":4007}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(air_quality_gold.Minimum)\"},{\"queryRef\":\"Min(air_quality_gold.Parameter_Units)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Units\"}},\"Function\":3},\"Name\":\"Min(air_quality_gold.Parameter_Units)\",\"NativeReferenceName\":\"First Parameter_Units\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Minimum\"}},\"Function\":3},\"Name\":\"Sum(air_quality_gold.Minimum)\",\"NativeReferenceName\":\"Min of Minimum\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Minimum\"}},\"Function\":3}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}},\"selector\":{\"id\":\"default\"}}],\"label\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"matchValueAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"textWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Lowest value'\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 278.95,
+          "x": 436.84,
+          "y": 200.00,
+          "z": 4007.00
+        },
+        {
+          "config": "{\"name\":\"7e7e7ca915550789da06\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":122.36841832281597,\"z\":2000,\"width\":436.84209551800967,\"height\":164.4736805414193,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"air_quality_gold.Parameter_Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Name\"},\"Name\":\"air_quality_gold.Parameter_Name\",\"NativeReferenceName\":\"Parameter_Name\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'o3'\"}}]]}}}]}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Name of the Paramater'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"a2aefc3c0de9a22b6403\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"air_quality_gold\"}},\"Property\":\"Parameter_Name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"air_quality_gold\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Parameter_Name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'pm25'\"}}],[{\"Literal\":{\"Value\":\"'o3'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 164.47,
+          "width": 436.84,
+          "x": 0.00,
+          "y": 122.37,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"dbf68905c0eb806ebd8b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":4009}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 4009.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Economic",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "1f1822c89a3b5bfacf36",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"308da9d5154cfa955367\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":5000,\"width\":551.3157771748375,\"height\":110.52631332383378,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"exchange_rates.TIME_PERIOD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"exchange_rates\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"TIME_PERIOD\"},\"Name\":\"exchange_rates.TIME_PERIOD\",\"NativeReferenceName\":\"TIME_PERIOD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"TIME_PERIOD\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2008-12-01T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-12-30T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"exchange_rates\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"TIME_PERIOD\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2008-12-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"TIME_PERIOD\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-12-31T00:00:00'\"}}}}}}}]}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Time period'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"slider\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Meow'\"}}}}}],\"general\":[{\"properties\":{\"altText\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}],\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.53,
+          "width": 551.32,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"4f7a5b2d7282e214b971\",\"layouts\":[{\"id\":0,\"position\":{\"x\":959.2105049175574,\"y\":390.78946496641225,\"z\":4000,\"width\":321.0526244168505,\"height\":328.9473610828386,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tlc_rides_gold.Borough\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(tlc_rides_gold.Total_Revenue)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Borough\"},\"Name\":\"tlc_rides_gold.Borough\",\"NativeReferenceName\":\"Borough\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Total_Revenue\"}},\"Function\":0},\"Name\":\"Sum(tlc_rides_gold.Total_Revenue)\",\"NativeReferenceName\":\"Sum of Total_Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Total_Revenue\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Toal revenue by borough'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 328.95,
+          "width": 321.05,
+          "x": 959.21,
+          "y": 390.79,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"54bc515d40a4d1dbf655\",\"layouts\":[{\"id\":0,\"position\":{\"x\":551.3157771748375,\"y\":373.68420219010466,\"z\":3000,\"width\":407.8947277427199,\"height\":346.0526238591462,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"tlc_rides_gold.Year\",\"active\":true}],\"Series\":[{\"queryRef\":\"tlc_rides_gold.Borough\"}],\"Y\":[{\"queryRef\":\"tlc_rides_gold.Average_Fare\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Year\"},\"Name\":\"tlc_rides_gold.Year\",\"NativeReferenceName\":\"Year\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Borough\"},\"Name\":\"tlc_rides_gold.Borough\",\"NativeReferenceName\":\"Borough\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Average_Fare\"},\"Name\":\"tlc_rides_gold.Average_Fare\",\"NativeReferenceName\":\"Average_Fare\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Average_Fare\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Average fare'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average fare in boroughs'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 346.05,
+          "width": 407.89,
+          "x": 551.32,
+          "y": 373.68,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"b56dcab88c964b4d6716\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":373.68420219010466,\"z\":1000,\"width\":551.3157771748375,\"height\":346.0526238591462,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(exchange_rates.OBS_VALUE)\"}],\"Category\":[{\"queryRef\":\"exchange_rates.TIME_PERIOD\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"exchange_rates\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"OBS_VALUE\"}},\"Function\":0},\"Name\":\"CountNonNull(exchange_rates.OBS_VALUE)\",\"NativeReferenceName\":\"Sum of OBS_VALUE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"TIME_PERIOD\"},\"Name\":\"exchange_rates.TIME_PERIOD\",\"NativeReferenceName\":\"TIME_PERIOD\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"TIME_PERIOD\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"zoom\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"lineStyles\":[{\"properties\":{\"areaShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"invertAxis\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Date'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Euro to dollar exchange rate'\"}}}}}],\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 346.05,
+          "width": 551.32,
+          "x": 0.00,
+          "y": 373.68,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"bc5c85734134edfb83d0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":110.52631332383378,\"z\":0,\"width\":551.3157771748375,\"height\":263.15788886627087,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"tlc_rides_gold.Total_Revenue_Euro\"}],\"Category\":[{\"queryRef\":\"tlc_rides_gold.Year\",\"active\":true}],\"Y2\":[{\"queryRef\":\"Sum(tlc_rides_gold.Total_Revenue)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Total_Revenue_Euro\"},\"Name\":\"tlc_rides_gold.Total_Revenue_Euro\",\"NativeReferenceName\":\"Total_Revenue_Euro\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Year\"},\"Name\":\"tlc_rides_gold.Year\",\"NativeReferenceName\":\"Year\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Total_Revenue\"}},\"Function\":0},\"Name\":\"Sum(tlc_rides_gold.Total_Revenue)\",\"NativeReferenceName\":\"Sum of Total_Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Total_Revenue_Euro\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"seriesLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Year'\"}}}}}],\"valueAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Revenue'\"}}}}}],\"y2Axis\":[{\"properties\":{\"secShowAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Revenue by currency'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 263.16,
+          "width": 551.32,
+          "x": 0.00,
+          "y": 110.53,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c850567eaab3e37a75f3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":551.3157771748375,\"y\":0,\"z\":2000,\"width\":728.9473521595704,\"height\":373.68420219010466,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"gdp.date\",\"active\":true}],\"Y\":[{\"queryRef\":\"gdp.GDP Growth %\"}],\"Y2\":[{\"queryRef\":\"Sum(tlc_rides_gold.Total_Revenue)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gdp\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"tlc_rides_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date\"},\"Name\":\"gdp.date\",\"NativeReferenceName\":\"date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"GDP Growth %\"},\"Name\":\"gdp.GDP Growth %\",\"NativeReferenceName\":\"GDP Growth %\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Total_Revenue\"}},\"Function\":0},\"Name\":\"Sum(tlc_rides_gold.Total_Revenue)\",\"NativeReferenceName\":\"Sum of Total_Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"GDP Growth %\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Year'\"}}}}}],\"valueAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Percentage GDP growth'\"}}},\"secTitleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Total revenue'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Revenue contextualized by USA GDP growth'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"gdp\"}},\"Property\":\"date\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"gdp\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"date\"}},\"Right\":{\"Literal\":{\"Value\":\"2011L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 373.68,
+          "width": 728.95,
+          "x": 551.32,
+          "y": 0.00,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

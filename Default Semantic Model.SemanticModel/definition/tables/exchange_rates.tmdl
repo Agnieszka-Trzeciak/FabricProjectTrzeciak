@@ -1,0 +1,32 @@
+table exchange_rates
+	lineageTag: 39a1bdd5-5629-48f1-ad65-623cc7d52d6a
+	sourceLineageTag: [dbo].[exchange_rates]
+
+	column OBS_VALUE
+		dataType: double
+		lineageTag: 844ba1c4-1069-47c0-9a7a-6d1ecfc72682
+		sourceLineageTag: OBS_VALUE
+		summarizeBy: none
+		sourceColumn: OBS_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TIME_PERIOD
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2834d0f-2c49-4deb-8c32-839f1fdf2cf9
+		sourceLineageTag: TIME_PERIOD
+		summarizeBy: none
+		sourceColumn: TIME_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition exchange_rates = entity
+		mode: directLake
+		source
+			entityName: exchange_rates
+			schemaName: dbo
+			expressionSource: 'DirectLake - Main'
+

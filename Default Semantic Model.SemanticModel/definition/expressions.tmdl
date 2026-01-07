@@ -1,0 +1,11 @@
+expression 'DirectLake - Main' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/55f60bfe-17cc-4050-80f8-325980210c70/6ac7e717-8382-4db2-b80a-4ed9824d3231", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: adefb393-15b6-4356-9475-6efa649c1d8d
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[air_quality_silver]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[tlc_rides_silver]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[taxi_zone_lookup]"}},"objectType":"Table"}]
+
