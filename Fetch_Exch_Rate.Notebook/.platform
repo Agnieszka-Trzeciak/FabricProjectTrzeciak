@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Fetch_Exch_Rate"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e61b8e62-7537-8211-43af-e6eff88f2d25"
+  }
+}

@@ -1,0 +1,61 @@
+table gdp
+	lineageTag: ef08dacf-735c-4b5a-a8dc-75f5ae0f720e
+	sourceLineageTag: [dbo].[gdp]
+
+	measure 'GDP Growth %' = ```
+			
+			VAR CurrentYear = MAX(gdp[date])
+			VAR CurrentGDP = SUM(gdp[value])
+			
+			VAR PreviousGDP = 
+			    CALCULATE(
+			        SUM(gdp[value]),
+			        gdp[date] = CurrentYear - 1
+			    )
+			
+			RETURN
+			    DIVIDE(CurrentGDP - PreviousGDP, PreviousGDP)
+			```
+		lineageTag: 1f76fd59-f5fd-4c34-8b6d-391089c941cf
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column countryiso3code
+		dataType: string
+		lineageTag: 546b5bd5-7d0a-4bfc-9c0d-e8004f819c1f
+		sourceLineageTag: countryiso3code
+		summarizeBy: none
+		sourceColumn: countryiso3code
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: int64
+		formatString: 0
+		lineageTag: c35cd66d-7500-47ed-b167-ab557087c554
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		lineageTag: 35225ef9-d50c-47d0-8b72-031ef91f123f
+		sourceLineageTag: value
+		summarizeBy: none
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gdp = entity
+		mode: directLake
+		source
+			entityName: gdp
+			schemaName: dbo
+			expressionSource: 'DirectLake - Main'
+

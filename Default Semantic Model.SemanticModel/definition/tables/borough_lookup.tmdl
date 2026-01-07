@@ -1,0 +1,45 @@
+table borough_lookup
+	lineageTag: 329209ae-99e1-4561-a490-2ebc68ef55e2
+	sourceLineageTag: [dbo].[borough_lookup]
+
+	column Borough
+		dataType: string
+		lineageTag: ca141246-b46f-4f8e-aebe-fc9a20581cb2
+		sourceLineageTag: Borough
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: Borough
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: ee8e80a5-5dd3-4c4b-b903-63505cc6f31c
+		sourceLineageTag: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: 0d4c8620-4bf0-466f-9704-35be0b8fac92
+		sourceLineageTag: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition borough_lookup = entity
+		mode: directLake
+		source
+			entityName: borough_lookup
+			schemaName: dbo
+			expressionSource: 'DirectLake - Main'
+

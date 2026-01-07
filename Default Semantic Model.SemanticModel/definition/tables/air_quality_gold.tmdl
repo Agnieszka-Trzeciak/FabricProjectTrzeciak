@@ -1,0 +1,105 @@
+table air_quality_gold
+	lineageTag: dfbf59d2-b57f-4dd9-a869-fdc0e1f3c29f
+	sourceLineageTag: [dbo].[air_quality_gold]
+
+	column Parameter_Units
+		dataType: string
+		lineageTag: 040e7f7a-5dd3-4cf2-baf2-db8908ecb283
+		sourceLineageTag: Parameter_Units
+		summarizeBy: none
+		sourceColumn: Parameter_Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parameter_Name
+		dataType: string
+		lineageTag: 9aa5c60d-5ebb-4f21-9e2d-2b1ef57f1a9a
+		sourceLineageTag: Parameter_Name
+		summarizeBy: none
+		sourceColumn: Parameter_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e2cd9698-6b09-4ead-b886-ce754579c7f4
+		sourceLineageTag: Start_Date
+		summarizeBy: none
+		sourceColumn: Start_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Borough
+		dataType: string
+		lineageTag: 0b2fe47c-2d3b-460d-a0da-eb8fccff204e
+		sourceLineageTag: Borough
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: Borough
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Average
+		dataType: double
+		lineageTag: 00bef28d-e794-4029-bcee-a1b5973fff3b
+		sourceLineageTag: Average
+		summarizeBy: sum
+		sourceColumn: Average
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Maximum
+		dataType: double
+		lineageTag: 8cf99c04-3f8a-42ea-8475-701ddbcbacf1
+		sourceLineageTag: Maximum
+		summarizeBy: sum
+		sourceColumn: Maximum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Minimum
+		dataType: double
+		lineageTag: 956fbc7e-dca7-4207-a7c8-dab71999bc24
+		sourceLineageTag: Minimum
+		summarizeBy: sum
+		sourceColumn: Minimum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ID
+		dataType: string
+		lineageTag: ff0a051c-1058-4044-bc15-c7cf23d639a3
+		sourceLineageTag: ID
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Borough_Name
+		dataType: string
+		lineageTag: 022b7c86-7596-4299-95e1-73bb2d84edd0
+		sourceLineageTag: Full_Borough_Name
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: Full_Borough_Name
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition air_quality_gold = entity
+		mode: directLake
+		source
+			entityName: air_quality_gold
+			schemaName: dbo
+			expressionSource: 'DirectLake - Main'
+

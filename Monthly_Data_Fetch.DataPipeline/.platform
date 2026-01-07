@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Monthly_Data_Fetch"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "37b6e663-0dff-9b64-45fe-35ab42249bb3"
+  }
+}

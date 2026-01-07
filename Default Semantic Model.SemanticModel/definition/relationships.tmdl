@@ -1,0 +1,17 @@
+relationship 0d85262e-e8f8-126a-5fe4-a6705d9eabf0
+	fromColumn: tlc_rides_gold.Year
+	toColumn: gdp.date
+
+relationship d69719bc-db5e-4f9e-6f7a-4834d5204c13
+	fromColumn: tlc_rides_gold.pickup_date
+	toColumn: exchange_rates.TIME_PERIOD
+
+relationship 65056654-77a3-fc1d-f49f-a857976b4fdf
+	fromColumn: air_quality_gold.ID
+	toColumn: tlc_rides_gold.ID
+
+relationship 88dd5b00-6f33-760a-ae39-d83a58db3d13
+	crossFilteringBehavior: bothDirections
+	fromColumn: air_quality_gold.Borough
+	toColumn: borough_lookup.Borough
+
