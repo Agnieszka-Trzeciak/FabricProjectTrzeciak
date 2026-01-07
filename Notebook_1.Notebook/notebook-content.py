@@ -37,27 +37,3 @@ spark_df.write.format("delta").mode("overwrite").saveAsTable("Borough_Lookup")
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
-
-# CELL ********************
-
-df = spark.sql("SELECT * FROM Main.dbo.exchange_rates ORDER BY TIME_PERIOD DESC LIMIT 1000")
-display(df)
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-df = spark.sql("SELECT * FROM Main.dbo.gdp ORDER BY date DESC LIMIT 1000")
-display(df)
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
